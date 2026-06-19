@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - logicalFilePath: 20260618-1-create-tbl-post.yaml
+  - changeSet:
+      id: 20260618-1-create-tbl-post
+      author: nurlan949
+      changes:
+        - createTable:
+            tableName: posts
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: message
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_time
+                  type: datetime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: like_count
+                  type: integer
+              - column:
+                  name: comment_count
+                  type: integer

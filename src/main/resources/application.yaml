@@ -23,3 +23,8 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     open-in-view: false
+
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db.changelog.yaml
+    default-schema: public
