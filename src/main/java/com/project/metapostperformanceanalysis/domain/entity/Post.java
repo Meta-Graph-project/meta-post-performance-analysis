@@ -26,8 +26,11 @@ public class Post {
     Integer likeCount;
     @Column(name = "comment_count")
     Integer commentCount;
+
     @Transient
     public Integer getEngagement() {
-        return (likeCount != null ? likeCount : 0) + (commentCount != null ? commentCount : 0);
+        int likes = likeCount != null ? likeCount : 0;
+        int comments = commentCount != null ? commentCount : 0;
+        return likes + (comments * 2);
     }
 }
