@@ -35,7 +35,6 @@ dependencies {
     //DB dependencies
     runtimeOnly 'org.postgresql:postgresql'
     //env file
-//    implementation 'me.paulschwarz:spring-dotenv:4.0.0'
     implementation 'io.github.cdimascio:dotenv-java:3.0.0'
     //mapper
     implementation 'org.mapstruct:mapstruct:1.5.5.Final'

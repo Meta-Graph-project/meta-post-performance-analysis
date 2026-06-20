@@ -1,4 +1,4 @@
-package com.project.metapostperformanceanalysis.domain.entity;
+package com.project.metapostperformanceanalysis.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

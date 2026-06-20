@@ -1,6 +1,6 @@
 package com.project.metapostperformanceanalysis.mapper;
 
-import com.project.metapostperformanceanalysis.domain.entity.Post;
+import com.project.metapostperformanceanalysis.entity.Post;
 import com.project.metapostperformanceanalysis.dto.request.PostRequest;
 import com.project.metapostperformanceanalysis.dto.response.PostResponse;
 import org.mapstruct.Mapper;
