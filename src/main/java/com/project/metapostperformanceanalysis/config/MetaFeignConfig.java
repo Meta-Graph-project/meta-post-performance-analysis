@@ -2,17 +2,15 @@ package com.project.metapostperformanceanalysis.config;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
-import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @Getter
 public class MetaFeignConfig {
-    @Value(value = "${meta.api.access-token}")
+    @Value(value = "${META_PAGE_ACCESS_TOKEN}")
     private String accessToken;
 
     @Bean
@@ -23,6 +21,8 @@ public class MetaFeignConfig {
                 requestTemplate.query("access_token", accessToken);
             }
         };
+
+
     }
 
 }

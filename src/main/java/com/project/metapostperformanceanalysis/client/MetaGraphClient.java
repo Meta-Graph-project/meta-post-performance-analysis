@@ -19,7 +19,7 @@ public interface MetaGraphClient {
             @RequestParam("limit") int limit
     );
 
-    @PostMapping("{pageId}/feed")
+    @PostMapping("/{pageId}/feed")
     PostCreateResponse createPost(
             @PathVariable("pageId") String pageId,
             @RequestParam("message") String message,

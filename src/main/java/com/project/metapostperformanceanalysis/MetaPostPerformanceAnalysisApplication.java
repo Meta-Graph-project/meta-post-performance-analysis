@@ -12,5 +12,4 @@ public class MetaPostPerformanceAnalysisApplication {
         SpringApplication.run(MetaPostPerformanceAnalysisApplication.class, args);
     }
 
-
 }
