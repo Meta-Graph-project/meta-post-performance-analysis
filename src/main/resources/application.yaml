@@ -2,6 +2,7 @@ spring:
   application:
     name: /meta-service
 
+
   datasource:
     url: jdbc:postgresql://${HOST}:${PORT}/${DB_NAME}?currentSchema=${SCHEMA}
     driver-class-name: org.postgresql.Driver
@@ -28,3 +29,14 @@ spring:
     enabled: true
     change-log: classpath:/db/changelog/db.changelog.yaml
     default-schema: public
+
+meta:
+  api:
+    base-url: https://graph.facebook.com/${meta.api.base-url:v25.0}
+    app-id: ${META_APP_ID}
+    app-secret: ${META_APP_SECRET}
+    access-token: ${META_PAGE_ACCESS_TOKEN}
+    user-id: ${META_APP_USER_ID}
+
+
+
