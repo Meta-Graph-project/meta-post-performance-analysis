@@ -31,6 +31,6 @@ public class Post {
     public Integer getEngagement() {
         int likes = likeCount != null ? likeCount : 0;
         int comments = commentCount != null ? commentCount : 0;
-        return likes + (comments * 2);
+        return likes + comments;
     }
 }

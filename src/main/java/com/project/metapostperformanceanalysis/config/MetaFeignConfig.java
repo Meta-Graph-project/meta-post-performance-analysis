@@ -12,6 +12,8 @@ import org.springframework.context.annotation.Configuration;
 public class MetaFeignConfig {
     @Value(value = "${META_PAGE_ACCESS_TOKEN}")
     private String accessToken;
+//    @Value(value = "${META_PAGE_ID}")
+//    private String pageId;
 
     @Bean
     public RequestInterceptor interceptor() {

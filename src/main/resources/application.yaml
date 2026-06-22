@@ -31,9 +31,9 @@ spring:
 
 meta:
   api:
-    base-url: https://graph.facebook.com/v25.0}
+    base-url: https://graph.facebook.com/v25.0
     app-id: ${META_APP_ID}
     app-secret: ${META_APP_SECRET}
     access-token: ${META_PAGE_ACCESS_TOKEN}
-    user-id: ${META_APP_USER_ID}
+    page-id: ${META_PAGE_ID}
 
