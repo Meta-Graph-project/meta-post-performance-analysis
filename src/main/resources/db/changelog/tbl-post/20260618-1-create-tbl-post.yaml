@@ -15,6 +15,11 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
+                  name: meta_post_id
+                  type: varchar(255)
+                  constraints:
+                    unique: true
+              - column:
                   name: message
                   type: varchar(255)
                   constraints:
@@ -30,3 +35,4 @@ databaseChangeLog:
               - column:
                   name: comment_count
                   type: integer
+

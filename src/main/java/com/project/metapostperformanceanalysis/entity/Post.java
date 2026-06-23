@@ -1,4 +1,4 @@
-package com.project.metapostperformanceanalysis.domain.entity;
+package com.project.metapostperformanceanalysis.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -18,6 +18,8 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    @Column(name = "meta_post_id", unique = true)
+    String metaPostId;
     @Column(name = "message", nullable = false)
     String message;
     @Column(name = "created_time", nullable = false)
@@ -26,8 +28,11 @@ public class Post {
     Integer likeCount;
     @Column(name = "comment_count")
     Integer commentCount;
+
     @Transient
     public Integer getEngagement() {
-        return (likeCount != null ? likeCount : 0) + (commentCount != null ? commentCount : 0);
+        int likes = likeCount != null ? likeCount : 0;
+        int comments = commentCount != null ? commentCount : 0;
+        return likes + comments;
     }
 }
