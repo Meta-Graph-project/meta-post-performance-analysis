@@ -36,7 +36,7 @@ public class PostServiceImpl implements PostService {
     private final MetaFeignConfig config;
 
 
-    @Override //hazir
+    @Override
     @Transactional(readOnly = true)
     public PostResponse getPostById(Long id) {
         Post post = postRepository.findById(id).orElseThrow(() -> new NotFoundException("Id not found" + ":" + id));
@@ -45,7 +45,7 @@ public class PostServiceImpl implements PostService {
     }
 
 
-    @Override //hazir
+    @Override
     @Transactional(readOnly = true)
     public List<PostResponse> getAllPosts() {
         List<Post> posts = postRepository.findAll();
@@ -53,7 +53,7 @@ public class PostServiceImpl implements PostService {
         return mapper.toResponseList(posts);
     }
 
-    @Override //hazir
+    @Override
     @Transactional(readOnly = true)
     @Cacheable("bestDay")
     public DayOfWeek getBestPerformingDay() {
@@ -67,7 +67,7 @@ public class PostServiceImpl implements PostService {
                 .map(Map.Entry::getKey).orElseThrow(() -> new NotFoundException("Best day not found"));
     }
 
-    @Override //yox
+    @Override
     @Transactional
     @Cacheable("likesByDay")
     public Map<DayOfWeek, Integer> getLikesByDayOfWeek() {
@@ -106,7 +106,7 @@ public class PostServiceImpl implements PostService {
     }
 
 
-    @Override //yox
+    @Override
     @Transactional(readOnly = true)
     @Cacheable("topPosts")
     public List<PostResponse> getTopEngagementPosts(Integer limit) {
@@ -118,7 +118,7 @@ public class PostServiceImpl implements PostService {
     }
 
 
-    @Override //yox
+    @Override
     @Cacheable("analysisReport")
     @Transactional(readOnly = true)
     public AnalysisReportResponse buildAnalysisReport() {
