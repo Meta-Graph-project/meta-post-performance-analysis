@@ -18,6 +18,8 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    @Column(name = "meta_post_id", unique = true)
+    String metaPostId;
     @Column(name = "message", nullable = false)
     String message;
     @Column(name = "created_time", nullable = false)

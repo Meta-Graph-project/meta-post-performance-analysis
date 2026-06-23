@@ -7,5 +7,5 @@ import java.util.Map;
 public record AnalysisReportResponse(List<PostResponse> topThreeEngagedPosts,
                                      Map<DayOfWeek, Integer> likesByDayOfWeek,
                                      DayOfWeek bestDay,
-                                     String summaryText) {
+                                     String resultText) {
 }
