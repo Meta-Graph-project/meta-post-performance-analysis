@@ -7,6 +7,7 @@
 FROM gradle:8.14.0-jdk21 AS builder
 
 WORKDIR /app
+
 COPY . .
 
 RUN gradle bootJar --no-daemon
