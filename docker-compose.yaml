@@ -1,3 +1,5 @@
+version: "3.9"
+
 services:
 
   postgres:
@@ -16,32 +18,24 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres -d meta-service"]
-      interval: 5s
-      timeout: 5s
-      retries: 10
-
   app:
     image: meta-post-performance-analysis:1.0
     container_name: meta-app
     restart: always
 
     depends_on:
-      postgres:
-        condition: service_healthy
+      - postgres
 
     ports:
       - "8081:8080"
 
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/meta-service?currentSchema=public
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
-      META_PAGE_ID: ${META_PAGE_ID}
-      META_PAGE_ACCESS_TOKEN: ${META_PAGE_ACCESS_TOKEN}
-      META_APP_ID: ${META_APP_ID}
-      META_APP_SECRET: ${META_APP_SECRET}
+      HOST: postgres
+      PORT: 5432
+      DB_NAME: meta-service
+      SCHEMA: public
+      USERNAME: postgres
+      PAROL: Nurlan2006,
 
 volumes:
   postgres_data:

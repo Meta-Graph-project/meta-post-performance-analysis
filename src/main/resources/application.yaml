@@ -2,12 +2,11 @@ spring:
   application:
     name: /meta-service
 
-
   datasource:
-    url: jdbc:postgresql://localhost:5432/meta-service?currentSchema=public
+    url: jdbc:postgresql://${HOST}:${PORT}/${DB_NAME}?currentSchema=${SCHEMA}
     driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: Nurlan2006,
+    username: ${USERNAME}
+    password: ${PAROL}
     hikari:
       minimum-idle: 2
       idle-timeout: 40000
