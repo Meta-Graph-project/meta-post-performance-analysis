@@ -2,6 +2,7 @@ spring:
   application:
     name: /meta-service
 
+
   datasource:
     url: jdbc:postgresql://${HOST}:${PORT}/${DB_NAME}?currentSchema=${SCHEMA}
     driver-class-name: org.postgresql.Driver

@@ -45,6 +45,8 @@ dependencies {
     //feignClient
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign:5.0.0")
 }
+
+
 tasks.named('test') {
     useJUnitPlatform()
 }
