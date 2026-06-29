@@ -3,10 +3,10 @@ spring:
     name: /meta-service
 
   datasource:
-    url: jdbc:postgresql://${HOST}:${PORT}/${DB_NAME}?currentSchema=${SCHEMA}
+    url: jdbc:postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}
     driver-class-name: org.postgresql.Driver
-    username: ${USERNAME}
-    password: ${PAROL}
+    username: ${PGUSER}
+    password: ${PGPASSWORD}
     hikari:
       minimum-idle: 2
       idle-timeout: 40000
